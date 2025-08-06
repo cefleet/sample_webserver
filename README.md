@@ -129,11 +129,8 @@ http://localhost:3000/items
 ```
 Where items is the name of the route you made earlier.
 
-# Make a tiny web app to test writing to the database
-> You can technically do this from construct or any other system like postman that can send a http type request with a POST/PUT method.
-This is so you can test your routes without writing code in construct.
-1. Add ability to host html file from 
-2. Add post route to insert into the database:
+# Add a Post Route to add items to database
+1. Add post route to insert into the database:
 ```
 //previous code
  ...
@@ -160,7 +157,11 @@ app.listen(port, () => {
 });
 ```
 
-3. Add ability to host html file from the webserver
+# Make a tiny web app to test writing to the database
+> You can technically do this from construct or any other system like postman that can send a http type request with a POST/PUT method.
+This is so you can test your routes without writing code in construct.
+1. Add ability to host html file from 
+2. Add ability to host html file from the webserver
 ```
 const express = require('express')
 const app = express()
@@ -179,7 +180,7 @@ app.get('/', (req, res) => {
 */
 
 ```
-4. Add index.html file and public folder:
+3. Add index.html file and public folder:
 >public/index.html
 ```
 <!DOCTYPE html>
