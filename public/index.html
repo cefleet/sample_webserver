@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="add-item">Add Item</button>
+    <ol id="items"></ol>
+
+    <script>
+        const addItemButton = document.getElementById('add-item');
+        const itemsElement = document.getElementById('items');
+
+        addItemButton.addEventListener('click', () => {
+            fetch('http://localhost:3000/add-item', { method: 'post' }).then(res => res.json().then(results => {
+                getItems()
+            }));
+        });
+
+        function getItems() {
+            fetch('http://localhost:3000/items').then(res => res.json()).then(results => {
+                //
+                itemsElement.innerHTML = '';
+                results.map(item => {
+                    const anItem = document.createElement('li');
+                    anItem.innerHTML = `id: ${item.id} | name: ${item.name}`
+                    itemsElement.appendChild(anItem)
+                })
+            })
+        }
+
+        getItems();
+    </script>
+</body>
+
+</html>
