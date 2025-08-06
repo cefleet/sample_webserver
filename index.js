@@ -16,9 +16,9 @@ const pool = mysql.createPool({
 app.use(express.static(path.join(__dirname, "public")));
 
 /*
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
+    app.get('/', (req, res) => {
+    res.send('Hello World!')
+    });
 */
 
 app.get("/items", async (req, res) => {
