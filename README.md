@@ -1,4 +1,31 @@
-# Setting up system for local development on windows
+# Sample Webserver
+This can be a simple setup to get started making a webserver and rest api.
+You can technically just to do the "setup node" section and clone the repo to test it out.
+If you want to do that you can simply do this:
+1. Do the Setup Node section.
+2. Clone this repo.
+3. from a terminal run the command 
+```
+npm install
+```
+4. Update the database credentials in the index.js file:
+```
+const pool = mysql.createPool({ 
+  //Your credentials here
+})
+```
+5. From terminal 
+```
+node index.js
+```
+
+6. Goto browser and enter the url
+```
+http://localhost:300
+```
+
+# Tutorial for Setting up system for local development on windows
+Follow this to understand each section.
 ## Setup node
 1. Download node:
 > https://nodejs.org/dist/v22.18.0/node-v22.18.0-x64.msi
@@ -68,8 +95,8 @@ const mysql = require('mysql2/promise');
 const port = 3000
 
 const pool = mysql.createPool({
-  host: 'test-db.cplylkn3ncs6.us-east-1.rds.amazonaws.com', //url for the database instance (not the database name)
-  user: 'admin',//or whatever user you are using 
+  host: 'YOUR_DATABASE_URL', //url for the database instance (not the database name)
+  user: 'YOUR_USERNAME',//or whatever user you are using 
   password: 'YOUR_PASWORD', //password
   database: 'DATABASE_NAME'
 });
